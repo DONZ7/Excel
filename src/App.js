@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Fragment} from 'react';
+import Button from './Components/Atoms/Button'
 import './App.css';
+import { Layout } from 'antd';
+import Header from './Components/organisms/Header/Header';
+import Footer from './Components/organisms/Footer/Footer';
+import Contenido from './Components/organisms/Content/Contenido';
+import Excel from './Components/Atoms/Excel';
+import Grid from 'antd/lib/card/Grid';
+import Principal from './Components/pages/Principal';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Principal/>
+   
   );
 }
 
