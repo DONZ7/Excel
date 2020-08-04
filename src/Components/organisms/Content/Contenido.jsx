@@ -1,5 +1,4 @@
 import React from 'react'
-import Prueba from '../../Atoms/Prueba';
 
 const Contenido=({estado})=>{
 console.log({estado})
@@ -11,7 +10,6 @@ console.log({estado})
                 <thead >
                      <tr>
                         <th scope="col">Categoría</th>
-                        
                         <th scope="col">Descripción</th>
                         <th scope="col">Foto</th>
                         <th scope="col">No</th>

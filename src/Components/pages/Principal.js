@@ -1,30 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import * as XLSX from 'xlsx'
-
 import Header from '../organisms/Header/Header';
 import Footer from '../organisms/Footer/Footer';
 import Contenido from '../organisms/Content/Contenido';
 
-let datos=[]
-
-class Principal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hoja: "",
-      hojas:[],
-      file: false
-
-    };
-    this.handleInputChange = this.handleInputChange.bind(this)
-  }
+const Principal =()=> {
+  const [state, setState] = useState({
+    hoja: "",
+    hojas: [],
+    file: false
+  });
+  const [datos, setdatos] = useState([]);
  
-  handleInputChange (event) {
+  const handleInputChange =(event)=> {
     const target = event.target
     const value = target.type === 'checkbox' ? target.checked : target.value
     const name = target.name
-    const this2 = this
-    this.setState({
+    setState({
       [name]: value
     })
     let hojas = []
@@ -43,45 +35,30 @@ class Principal extends React.Component {
             sheetName
           })
         })
-        this2.setState({
+        setState({
           selectedFileDocument: target.files[0],
-          hojas
+          hojas: hojas,
         })
-        
       }
     }
-    
-    hojas=(this2.state.hojas)
-    if(hojas[0]!=undefined){
-    datos =(hojas[0].data)
-    //console.log(datos)
+    if(hojas[0]!==undefined){
+    setdatos(hojas[0].data)
   }
-    
-  } 
-  
-  render() {
-    const {
-      handleInputChange
-    } = this
+  }
+console.log(state)
     return (
-        
-        
     <div className="App">
         <header >
           <Header handleInputChange={handleInputChange} />
         </header>
-        
         <content className="App-header">
           <Contenido estado={datos} />
         </content>
-
         <footer>
           <Footer/>
         </footer>
-    </div>        
-        
+    </div>  
     );
-  }
 }
 
 export default Principal

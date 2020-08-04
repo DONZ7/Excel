@@ -1,6 +1,6 @@
 import React from 'react'
 import FileUpload from '../Atoms/FileUpload'
-import {Row,Col,Button} from 'antd'
+import {Button} from 'antd'
 
 const Fotos=()=>{
     return(

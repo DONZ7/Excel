@@ -1,9 +1,8 @@
 import React from 'react'
+import {Button} from 'antd';
 
-import {Header, Button} from 'antd';
 
-
-const Footer1=()=>{
+const Footer=()=>{
  return(
  <div > 
 
@@ -15,6 +14,6 @@ const Footer1=()=>{
  );
 };
 
-export default Footer1
+export default Footer
 
    

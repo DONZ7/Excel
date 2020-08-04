@@ -1,13 +1,9 @@
 import React from 'react'
 import Excel from '../../Atoms/Excel';
-
-import {Header, Button,Row,Col} from 'antd';
+import {Button} from 'antd';
 import Grids from '../../molecules/Grids';
 
-//import Grids from '../../Atoms/Grids';
-
-const Header1=({handleInputChange})=>{
-    const datoss=[];
+const Header=({handleInputChange})=>{
  return(
     <div>
         <Grids>
@@ -20,6 +16,6 @@ const Header1=({handleInputChange})=>{
  );
 };
 
-export default Header1
+export default Header
 
    

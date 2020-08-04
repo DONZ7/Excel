@@ -1,6 +1,6 @@
 import React from 'react'
 import Fotos from '../molecules/Fotos';
-import {Row,Col,Button} from 'antd'
+import {Row,Col} from 'antd'
 
 
 const Grids=({children})=>{
