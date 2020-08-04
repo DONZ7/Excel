@@ -1,17 +1,16 @@
-import React from 'react'
+import React from "react";
 
-
-const Excel=({d})=>{
- 
-return (
+const Excel = ({ handleInputChange }) => {
+  return (
     <input
-    required
-    type="file"
-    name="file"
-    id="file"
- onChange={d}
-    placeholder="Archivo de excel" />
-)
-}
+      required
+      type="file"
+      name="file"
+      id="file"
+      onChange={handleInputChange}
+      placeholder="Archivo de excel"
+    />
+  );
+};
 
-export default Excel
+export default Excel;
