@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Contenido=({estado})=>{
-console.log({estado})
+console.log(estado)
     return(
 
     <div className="row">
@@ -12,18 +12,17 @@ console.log({estado})
                         <th scope="col">Categoría</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Foto</th>
-                        <th scope="col">No</th>
+                        <th scope="col">Precio</th>
                         
                     </tr>
                 </thead> 
                 <tbody>
                  {estado.map(item => (
-                    <tr key={item.id}>
-                        <td>{item.Categoría}</td>
-                        <td>{item.Comentario}</td>
-                        <td>{item.Descripción}</td>
-                        <td>{item.Foto}</td>
-                        <td>{item.No}</td>
+                    <tr key={item.SKU}>
+                        <td>{item.type}</td>
+                        <td>{item.description}</td>
+                        <td>{item.images}</td>
+                        <td>{item.price}</td>
                 
                     </tr>
 

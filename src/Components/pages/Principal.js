@@ -6,24 +6,16 @@ import Contenido from "../organisms/Content/Contenido";
 import "../../App.css";
 
 const Principal = () => {
-  const [state, setState] = useState({
-    hoja: "",
-    hojas: [],
-    file: false,
-  });
   const [datos, setdatos] = useState([]);
+  const [images, setimages] = useState([]);
 
   const handleUpload = (e) => {
-    console.log(e.target.files);
+    setimages(e.target.files);
   };
 
   const handleInputChange = (event) => {
     const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
-    setState({
-      [name]: value,
-    });
     let hojas = [];
     if (name === "file") {
       let reader = new FileReader();
@@ -42,28 +34,23 @@ const Principal = () => {
             sheetName,
           });
         });
-        setState({
-          selectedFileDocument: target.files[0],
-          hojas: hojas,
-        });
+        setdatos(hojas[0].data);
       };
     }
-    if (hojas[0] !== undefined) {
-      setdatos(hojas[0].data);
-    }
   };
-  console.log(state);
+  
+  console.log(datos, images);
   return (
     <div className="App">
       <header>
         <Header handleInputChange={handleInputChange} handleUpload={handleUpload} />
       </header>
-      <content className="App-header">
-        <Contenido estado={datos} />
-      </content>
       <footer>
         <Footer />
       </footer>
+      <content className="App-header">
+        <Contenido estado={datos} />
+      </content>
     </div>
   );
 };

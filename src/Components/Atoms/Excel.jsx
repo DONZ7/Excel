@@ -8,7 +8,6 @@ const Excel = ({ handleInputChange }) => {
       name="file"
       id="file"
       onChange={handleInputChange}
-      placeholder="Archivo de excel"
     />
   );
 };
