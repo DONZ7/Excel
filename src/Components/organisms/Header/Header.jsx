@@ -7,11 +7,11 @@ const Header = ({ handleInputChange,handleUpload }) => {
   return (
     <Row>
       <Col span={12}>
-        <h1>Importar Excell</h1>
+        <h1>Subir Excel</h1>
         <Excel handleInputChange={handleInputChange} />
       </Col>
       <Col span={12}>
-        <h1>Importar fotos</h1>
+        <h1>Subir fotos</h1>
         <FileUpload handleUpload={handleUpload} />
       </Col>
     </Row>
